@@ -1,0 +1,46 @@
+<div class="event layout_full block<?= $this->class ?>" itemscope itemtype="http://schema.org/Event">
+  <div class="event-background"></div>
+  <h3 itemprop="name"><?= $this->title ?></h3>
+  <p class="info">
+    <a href="<?= $this->href ?>">
+      <span class="weekday"><?php echo $this->parseDate("D", $this->startDate); ?></span>
+      <span class="day"><?php echo $this->parseDate("j.", $this->startDate); ?></span>
+      <span class="month"><?php echo $this->parseDate("M", $this->startDate); ?></span>
+      <span class="year"><?php echo $this->parseDate("Y", $this->startDate); ?></span>
+      <span class="hour"><?php echo $this->parseDate("H:i ", $this->startTime); ?> Uhr</span>
+    </a>
+  </p>
+
+    <?php if ($this->recurring): ?>
+    <p class="recurring"><?= $this->recurring ?><?php if ($this->until) echo ' ' . $this->until; ?>.</p>
+  <?php endif; ?>
+
+  <div class="ce_text block">
+
+    <?php
+      $start = 0;
+      $laenge = 200;
+      if(strlen($this->teaser) > $laenge) {
+        $this->teaser =  preg_replace("/[^ ]*$/", '', substr($this->teaser, $start, $laenge));
+      }
+      echo $this->teaser;
+    ?>...
+    <br>
+    <a href="<?= $this->href ?>">Weiterlesen ...</a>
+  </div>
+
+  <?php if ($this->location): ?>
+    <p class="location"><?= $this->locationLabel ?>: <?= $this->location ?></p>
+  <?php endif; ?>
+
+  <?php if ($this->enclosure): ?>
+    <ul class="enclosure">
+      <?php foreach ($this->enclosure as $enclosure): ?>
+        <li class="download-element ext-<?= $enclosure['extension'] ?>">
+           <a href="<?= $enclosure['href'] ?>" title="<?= $enclosure['title'] ?>"><?= $enclosure['link'] ?> <span class="size">(<?= $enclosure['filesize'] ?>)</span></a>
+        </li>
+      <?php endforeach; ?>
+    </ul>
+  <?php endif; ?>
+
+</div>

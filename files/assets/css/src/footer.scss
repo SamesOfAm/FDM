@@ -1,0 +1,112 @@
+@import 'variables';
+
+#footer {
+  height: 25vw;
+  margin-top: 100px;
+  background-image: $gradient-footer;
+  .inside {
+    background-image: url('../../images/layout/netzblurred.png');
+    background-repeat: no-repeat;
+  }
+}
+
+.footer-content {
+  position: relative;
+  width: $content-width;
+  max-width: $content-max-width;
+  height: 25vw;
+  margin: 0 auto;
+  a {
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px solid $secondary-color;
+    padding-bottom: 2px;
+    transition: all 150ms;
+    &:hover {
+      border-bottom-width: 3px;
+    }
+  }
+}
+
+.footer-logo {
+  width: 250px;
+  height: 250px;
+  background-color: white;
+  border-radius: 100%;
+  float: right;
+  margin-top: -120px;
+  text-align: center;
+  box-shadow: 0 0 20px gray;
+  transition: all 350ms;
+  &:hover {
+    box-shadow: 0 0 60px gray;
+  }
+  img {
+    width: 70%;
+    margin-top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.footer-navigation {
+  float: left;
+  width: 240px;
+  margin-top: 25px;
+}
+
+.footer-navigation-option {
+  padding: 6px;
+}
+
+.footer-info {
+  float: left;
+  width: 240px;
+  margin-top: 27px;
+  color: white;
+  p {
+    border-bottom: 1px solid $secondary-color;
+    padding-bottom: 3px;
+    display: inline;
+    line-height: 1.9em;
+  }
+}
+
+.footer-info-bottom {
+  margin-top: 25px;
+}
+
+@media screen and (max-width: 990px) {
+  #footer {
+    height: 500px;
+    .inside {
+      background-image: none;
+      .footer-content {
+        width: 85%;
+      }
+    }
+  }
+
+  .footer-logo {
+    position: absolute;
+    top: -110px;
+    left: 50%;
+    margin: 0;
+    transform: translateX(-50%);
+  }
+
+  .footer-navigation {
+    width: 135px;
+    margin-top: 170px;
+    font-size: 16px;
+  }
+
+  .footer-info {
+    float: right;
+    width: 170px;
+    margin-top: 170px;
+    font-size: 14px;
+    p {
+      border-bottom: none;
+    }
+  }
+}

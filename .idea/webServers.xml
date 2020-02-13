@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="a198e104-2c8a-47b4-854c-dcb66fe1baa5" name="FDM" url="http://webserv4.rz.uni-jena.de">
+        <fileTransfer host="webserv4.rz.uni-jena.de" port="22" rootFolder="/web" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

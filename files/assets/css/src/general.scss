@@ -1,0 +1,24 @@
+@font-face {
+  font-family: 'Encode Sans Condensed';
+  src: url('../fonts/EncodeSansCondensed-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Encode Sans Condensed Bold';
+  src: url('../fonts/EncodeSansCondensed-Bold.woff') format('woff');
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Encode Sans Condensed', sans-serif;
+  letter-spacing: +0.04em;
+}
+
+@import 'header';
+@import 'footer';
+@import 'main';
